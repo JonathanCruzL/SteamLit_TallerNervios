@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
-import cv2 as cv
+pip install opencv-python
+# import cv2 as cv
 import pandas as pd
 from modelo.unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
