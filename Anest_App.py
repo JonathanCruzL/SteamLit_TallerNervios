@@ -3,6 +3,7 @@ import streamlit as st
 import numpy as np
 import cv2 #as cv
 from cv2 import *
+import opencv-python-headless
 import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
