@@ -30,9 +30,9 @@ def camara():
         # Extraer la imagen en formato Bytes
         st.image(uploaded_file.getvalue())
         # Decodificar la imagen para ser  leida como una lista
-#         imagen = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
-        imagen = Image.fromarray(np.frombuffer(uploaded_file.getvalue(), np.uint8))
-        imagen = ImageOps.grayscale(imagen)
+        imagen = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
+#         imagen = Image.fromarray(np.frombuffer(uploaded_file.getvalue(), np.uint8))
+#         imagen = ImageOps.grayscale(imagen)
         # Convertir la lista en array
         img_array = np.array(imagen)
         # Creación del modelo
