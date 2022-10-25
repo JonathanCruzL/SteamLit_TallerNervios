@@ -1,5 +1,6 @@
 
 import streamlit as st
+pip install --upgrade streamlit
 import numpy as np
 import cv2 #as cv
 from cv2 import *
