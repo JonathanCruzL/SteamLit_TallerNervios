@@ -9,7 +9,7 @@ allow_prereleases = true
 [packages]
 streamlit = "1.9.2"
 opencv-python-headless = ">=4.5"
-tensorflow=="2.9.1"
+tensorflow = "2.9.1"
 # backports.weakref = "*"
 # opencv-python = "*"
 
