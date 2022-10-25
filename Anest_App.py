@@ -1,12 +1,13 @@
 import streamlit as st
 import numpy as np
-pip install opencv-python-headless
+# pip install opencv-python-headless
 # import cv2 as cv
 import pandas as pd
+from cv2 import import_cv2
 from modelo.unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
-
+cv = import_cv2()
 
 def saludo():
     # Título de la App
