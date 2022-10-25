@@ -7,6 +7,7 @@ import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
+$ pip install -U streamlit streamlit-webrtc opencv-python-headless
 
 my_imread = imread()
 
