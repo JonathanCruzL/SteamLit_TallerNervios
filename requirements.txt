@@ -1,4 +1,8 @@
 numpy
+h5py
+typing-extensions
+wheel
+
 opencv-python-headless
 tensorflow
 opencv-contrib-python
