@@ -2,3 +2,4 @@ numpy
 opencv-python-headless
 tensorflow
 opencv-contrib-python
+opencv-python
