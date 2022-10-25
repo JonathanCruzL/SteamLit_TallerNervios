@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-pip install opencv-python
+pip install opencv-python-headless
 # import cv2 as cv
 import pandas as pd
 from modelo.unet import unet
