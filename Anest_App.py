@@ -1,15 +1,13 @@
 
 import streamlit as st
 import numpy as np
-import cv2 #as cv
-from cv2 import *
+import cv2 as cv
 import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
-%pip install -U streamlit opencv-python-headless
 
-my_imread = imread()
+
 
 def saludo():
     # Título de la App
@@ -31,7 +29,7 @@ def camara():
         st.image(uploaded_file.getvalue())
         # Decodificar la imagen para ser  leida como una lista
 #         imagen = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
-        imagen = my_imread(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
+        imagen = cv2.imread(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
         # Convertir la lista en array
         img_array = np.array(imagen)
         # Creación del modelo
