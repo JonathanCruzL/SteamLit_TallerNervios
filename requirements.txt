@@ -1,5 +1,5 @@
 numpy
-protobuf<3.20,>=3.9.2,
+protobuf<3.20,>=3.9.2
 h5py
 protobuf~=3.19.0
 opencv-python-headless
