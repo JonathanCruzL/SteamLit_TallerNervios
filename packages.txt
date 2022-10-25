@@ -1,4 +1,4 @@
 pkg-config
-protobuf==3.2.0
+protobuf==3.9.2
 freeglut3-dev
 libgtk2.0-dev
