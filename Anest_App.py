@@ -7,7 +7,6 @@ import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
-from cv2 import imread
 
 my_imread = imread()
 
