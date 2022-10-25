@@ -38,7 +38,7 @@ def camara():
         # Creación del modelo
         modelo = unet()
         # Cargar los pesos pre-entrenados del modelo
-        modelo.load_weights('pesos/pesosBalanceBlancos.h5')
+        modelo.load_weights('models/pesosBalanceBlancos.h5')
         # Procesar la imagen-array
         img_process = imagenProceso(img_array)
         # Pasar la imagen procesada a la etapa de inferencia
