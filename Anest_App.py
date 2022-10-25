@@ -1,7 +1,7 @@
 
 import streamlit as st
-import matplotlib.pyplot as plt
-from PIL import Image
+
+
 import numpy as np
 import cv2 as cv
 import pandas as pd
@@ -31,7 +31,7 @@ def camara():
         st.image(uploaded_file.getvalue())
         # Decodificar la imagen para ser  leida como una lista
 #         imagen = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
-        imagen = Image.open(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
+        imagen = cv.imread(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
         # Convertir la lista en array
         img_array = np.array(imagen)
         # Creación del modelo
