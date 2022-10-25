@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <div id="root"></div>
-  <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.1.0/build/stlite.js"></script>
-  <script>
-    stlite.mount({
-      requirements: ["opencv-python"],
-      entrypoint: "streamlit_app.py",
-      files: {
-        "streamlit_app.py": 
 
 import streamlit as st
 import numpy as np
