@@ -44,7 +44,7 @@ def camara():
         # Pasar la imagen procesada a la etapa de inferencia
         prediccion = modelo.predict(img_process)
         # Limitar la predicción
-        aux = pred8iccion < 1.0
+        aux = prediccion < 1.0
         prediccion[aux] = 0
         # Pasar de un tensor-imagen a una imagen que se pueda mostrar
         prediccion = prediccion[0, :, :, 0]
