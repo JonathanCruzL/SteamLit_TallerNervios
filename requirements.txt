@@ -4,4 +4,4 @@ h5py
 protobuf~=3.19.0
 opencv-python-headless
 tensorflow 
-matplotlib.pyplot
+matplotlib
