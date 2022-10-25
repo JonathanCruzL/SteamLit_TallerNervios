@@ -1,13 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.1.0/build/stlite.js"></script>
+  <script>
+    stlite.mount({
+      requirements: ["opencv-python"],
+      entrypoint: "streamlit_app.py",
+      files: {
+        "streamlit_app.py": 
+
 import streamlit as st
 import numpy as np
-# pip install opencv-python-headless
-# import cv2 as cv
+import cv2 as cv
 import pandas as pd
-from cv2 import import_cv2
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
-cv = import_cv2()
 
 def saludo():
     # Título de la App
