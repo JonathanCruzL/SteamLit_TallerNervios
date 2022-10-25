@@ -7,6 +7,9 @@ import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
+from cv2 import imread
+
+my_imread = imread()
 
 def saludo():
     # Título de la App
@@ -28,7 +31,7 @@ def camara():
         st.image(uploaded_file.getvalue())
         # Decodificar la imagen para ser  leida como una lista
 #         imagen = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
-        imagen = imread(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
+        imagen = my_imread(np.frombuffer(uploaded_file.getvalue(), np.uint8), cv.IMREAD_GRAYSCALE)
         # Convertir la lista en array
         img_array = np.array(imagen)
         # Creación del modelo
@@ -40,7 +43,7 @@ def camara():
         # Pasar la imagen procesada a la etapa de inferencia
         prediccion = modelo.predict(img_process)
         # Limitar la predicción
-        aux = prediccion < 1.0
+        aux = pred8iccion < 1.0
         prediccion[aux] = 0
         # Pasar de un tensor-imagen a una imagen que se pueda mostrar
         prediccion = prediccion[0, :, :, 0]
