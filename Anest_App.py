@@ -30,7 +30,7 @@ def camara():
         # Extraer la imagen en formato Bytes
         st.image(uploaded_file.getvalue())
         # Decodificar la imagen para ser  leida como una lista
-        imagen_color = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8)) #, cv.IMREAD_GRAYSCALE)
+        imagen_color = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8) , cv.IMREAD_COLOR)
         imagen =  cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
 #         imagen = Image.fromarray(np.frombuffer(uploaded_file.getvalue(), np.uint8))
 #         imagen = ImageOps.grayscale(imagen)
