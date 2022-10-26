@@ -30,13 +30,12 @@ def camara():
         # Extraer la imagen en formato Bytes
         st.image(uploaded_file.getvalue())
         # Decodificar la imagen para ser  leida como una lista
-        imagen_color = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8) , cv.IMREAD_COLOR)
-        imagen =  cv.cvtColor(imagen_color, cv.COLOR_BGR2GRAY)
+        imagen = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8) , cv.IMREAD_GRAYSCALE)
 #         imagen = Image.fromarray(np.frombuffer(uploaded_file.getvalue(), np.uint8))
 #         imagen = ImageOps.grayscale(imagen)
         # Convertir la lista en array
         img_array = np.array(imagen)
-#         img_color =  cv.cvtColor(img_array,cv2.COLOR_GRAY2RGB)
+        img_color =  cv.cvtColor(img_array,cv.COLOR_GRAY2RGB)
         # Creación del modelo
         modelo = unet()
         # Cargar los pesos pre-entrenados del modelo
@@ -57,9 +56,9 @@ def camara():
         # Calcular el rectángulo que encierra la predicción
         mask_rectangle = cuadrarRect(img_round)
         # cinfigurar el rectangulo como una imagen
-        final_image = dimRec(mask_rectangle, imagen_color)
+        final_image = dimRec(mask_rectangle, img_color)
         # Multiplicar el rectángulo con la imagen original
-        ee = np.multiply(mask_rectangle, imagen_color) / 255.0
+        ee = np.multiply(mask_rectangle, img_color) / 255.0
         # Mostrar la imagen
         st.image(ee)
         st.subheader("Imagen a descargar o compartir ")
