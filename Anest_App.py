@@ -56,9 +56,9 @@ def camara():
         # Calcular el rectángulo que encierra la predicción
         mask_rectangle = cuadrarRect(img_round)
         # cinfigurar el rectangulo como una imagen
-        final_image = dimRec(mask_rectangle, img_color)
+        final_image = dimRec(mask_rectangle, img_array)
         # Multiplicar el rectángulo con la imagen original
-        ee = np.multiply(mask_rectangle, img_color) / 255.0
+        ee = np.multiply(mask_rectangle, img_array) / 255.0
         # Mostrar la imagen
         st.image(ee)
         st.subheader("Imagen a descargar o compartir ")
