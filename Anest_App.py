@@ -65,12 +65,12 @@ def camara():
         # Mostrar el resultado Final
         st.image(final_image)
         # Ejemplo de la tabla de valores
-        st.subheader("Tabla Metadatos (Ejemplo)")
-        # Creación del dataset
-        data=[["B", "CHI"], ["Frec.", "12.0 MHz"], ["Gn", "66"], ["E/A", "2/1"], ["Mapa", "D/O"], ["D", "5cm"],
-              ["DR", "75"], ["FR", "16 Hz"], ["AO", "100%"], ["XBeam", "On"], ["BStr +", "Off"]]
-        df = pd.DataFrame(data, columns=["Name", "Value"])
-        st.dataframe(df)
+#         st.subheader("Tabla Metadatos (Ejemplo)")
+#         # Creación del dataset
+#         data=[["B", "CHI"], ["Frec.", "12.0 MHz"], ["Gn", "66"], ["E/A", "2/1"], ["Mapa", "D/O"], ["D", "5cm"],
+#               ["DR", "75"], ["FR", "16 Hz"], ["AO", "100%"], ["XBeam", "On"], ["BStr +", "Off"]]
+#         df = pd.DataFrame(data, columns=["Name", "Value"])
+#         st.dataframe(df)
 
 
 saludo()
