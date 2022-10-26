@@ -31,12 +31,12 @@ def camara():
         st.image(uploaded_file.getvalue())
         # Decodificar la imagen para ser  leida como una lista
         imagen_color = cv.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8) , cv.IMREAD_COLOR)
-        imagen =  cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
+        imagen =  cv.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
 #         imagen = Image.fromarray(np.frombuffer(uploaded_file.getvalue(), np.uint8))
 #         imagen = ImageOps.grayscale(imagen)
         # Convertir la lista en array
         img_array = np.array(imagen)
-        img_color =  cv2.cvtColor(img_array,cv2.COLOR_GRAY2RGB)
+#         img_color =  cv.cvtColor(img_array,cv2.COLOR_GRAY2RGB)
         # Creación del modelo
         modelo = unet()
         # Cargar los pesos pre-entrenados del modelo
