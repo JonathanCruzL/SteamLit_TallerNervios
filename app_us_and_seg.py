@@ -87,7 +87,7 @@ def camara():
         mask_est = mask_est.astype(np.uint8)
         mask_est = mask_est*255
 
-        mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
+        mask_est_Show = cv.resize(np.squeeze(mask_est), (200,200) )
         
         st.subheader("Segmentación.")
         
