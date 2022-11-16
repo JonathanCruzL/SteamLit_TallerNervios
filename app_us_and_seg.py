@@ -65,13 +65,11 @@ def camara():
         ee = np.multiply(mask_rectangle, img_array) / 255.0
         # Mostrar la imagen
         st.image(ee)
+        
         st.subheader("Imagen a descargar o compartir")
         # Mostrar el resultado Final
-        
-#         final_image = cv.resize(final_image, (256,256))
-
-        st.write(str(np.shape(final_image)))
-        st.image(final_image)
+        final_US_Show = cv.resize(final_image, (584,584))
+        st.image(final_US_Show)
         
         # =======================================================================
         
@@ -80,7 +78,7 @@ def camara():
         # Cargar los pesos pre-entrenados del modelo
         modelo_seg.load_weights('models/model_seg_w/model_Unet_wei.h5fd')
         
-        img2pred = final_image/255
+        img2pred = cv.resize(final_image, (256,256))/255
         img2pred = img2pred[np.newaxis,...,np.newaxis]
         
         mask_est = modelo_seg.predict(img2pred)
@@ -88,15 +86,12 @@ def camara():
         mask_est[mask_est<0.5] = 0
         mask_est = mask_est.astype(np.uint8)
         mask_est = mask_est*255
+        
+        mask_est_Show = cv.resize(mask_est, (584,584))
 
         st.subheader("Segmentación.")
-        st.image(mask_est)
+        st.image(mask_est_Show)
 
-        
-    
-        
-
-        
 
 
 saludo()
