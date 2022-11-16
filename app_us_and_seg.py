@@ -77,6 +77,7 @@ def camara():
         st.write(str(np.shape(final_image)))
         
         img2pred = cv.resize(np.array(final_image), (256,256))
+        img2pred = img2pred[np.newaxis,...,np.newaxis]
         
         st.write("img2predi "+str(type(img2pred)))
         st.write("img2predi "+str(np.shape(img2pred)))
