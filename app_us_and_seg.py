@@ -15,7 +15,7 @@ def saludo():
   
     # Título de la App
 #     st.header("SegmentApp")
-    col_1, col_2, col_3 = st.columns([3, 5, 3])
+    col_1, col_2, col_3 = st.columns([4, 5, 4])
     col_2.header("SegmentApp") # use_column_width=True)
     # Descripción del aplicativo
     texto = """ Esta aplicación permite extraer el recuadro de ultrasonido de una imagen
