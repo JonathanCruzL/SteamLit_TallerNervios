@@ -71,6 +71,8 @@ def camara():
 #         modelo_seg.load_weights()
        
         mask_est = modelo.predict(img_process)
+        st.subheader("Segmentación.")
+        st.image(mask_est)
 
         
     
