@@ -14,7 +14,7 @@ from model_seg_unet import (upsample_simple, upsample_conv, create_model)
 def saludo():
   
     # Título de la App
-#     st.header("SegmentApp")
+#     st.header("NerveID")
     col_1, col_2, col_3 = st.columns([5, 5, 5])
     col_2.header("SegmentApp") # use_column_width=True)
     # Descripción del aplicativo
