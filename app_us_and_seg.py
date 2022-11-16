@@ -77,6 +77,10 @@ def camara():
         img2pred = img2pred[np.newaxis,...,np.newaxis]
         img2pred = img2pred/255
         
+        img2pred[img2pred>=0.5] = 1
+        img2pred[img2pred<0.5] = 0
+        img2pred = img2pred.astype(np.uint8)
+        
         st.write("img2predi "+str(type(img2pred)))
         st.write("img2predi "+str(np.shape(img2pred)))
         
