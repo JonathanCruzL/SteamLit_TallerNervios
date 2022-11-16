@@ -89,7 +89,7 @@ def camara():
         
         st.write(str(np.shape(mask_est)))
         mask_est_Show = cv.resize(np.squeeze(mask_est), (584,584) )
-        st.write(str(np.shape(mask_est)))
+        st.write(str(np.shape(mask_est_Show)))
 
         st.subheader("Segmentación.")
         st.image(mask_est_Show)
