@@ -14,10 +14,11 @@ from model_seg_unet import (upsample_simple, upsample_conv, create_model)
 def saludo():
   
     # Título de la App
-    st.header("Anest App")
+    st.header("SegmentApp")
     # Descripción del aplicativo
-    texto = """ Esta aplicación permite extraer el recuadro de ultrasonido y, luego, 
-    genera la segmentación automática del nervio en dicha imagen.  
+    texto = """ Esta aplicación permite extraer el recuadro de ultrasonido de una imagen
+    tomada directamente del ecógrafo. Posteriormente, realiza la segmentación automática 
+    del nervio en dicha imagen.  
     """
     st.write(texto)
 
