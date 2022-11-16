@@ -67,7 +67,7 @@ def camara():
         # Mostrar la imagen
 #         st.image(ee)
         
-        st.subheader("Imagen a descargar o compartir")
+        st.subheader("Sección de ultrasonido extraída")
         # Mostrar el resultado Final
         final_US_Show = cv.resize(final_image, (400,400))
         
@@ -94,7 +94,7 @@ def camara():
 
         mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
         
-        st.subheader("Segmentación")
+        st.subheader("Segmentación de la estructura nerviosa")
         
         col1_, col2_, col3_ = st.columns([2, 5, 2])
         col2_.image(mask_est_Show) # use_column_width=True)
