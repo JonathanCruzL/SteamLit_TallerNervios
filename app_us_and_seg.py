@@ -69,7 +69,11 @@ def camara():
         st.subheader("Imagen a descargar o compartir")
         # Mostrar el resultado Final
         final_US_Show = cv.resize(final_image, (400,400))
-        st.image(final_US_Show)
+        
+        col1, col2, col3 = st.columns([2, 5, 2])
+        col2.image(final_US_Show) # use_column_width=True)
+        
+#         st.image(final_US_Show)
         
         # =======================================================================
         
@@ -91,8 +95,8 @@ def camara():
         
         st.subheader("Segmentación.")
         
-        col1, col2, col3 = st.columns([2, 5, 2])
-        col2.image(mask_est_Show) # use_column_width=True)
+        col1_, col2_, col3_ = st.columns([2, 5, 2])
+        col2_.image(mask_est_Show) # use_column_width=True)
 
         
 #         st.image(mask_est_Show)
