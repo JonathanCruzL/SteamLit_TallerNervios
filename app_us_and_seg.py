@@ -104,6 +104,8 @@ def camara():
         contours, hierarchy = cv.findContours(image=mask_est_Show, mode=cv.RETR_TREE, method=cv.CHAIN_APPROX_NONE)
         cont = cv.drawContours(image=final_US_Show, contours=contours, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv.LINE_AA)
         
+        st.write(str(np.shape(cont)))
+        
         col1__, col2__, col3__ = st.columns([2, 5, 2])
         col2__.image(cont) # use_column_width=True)
         
