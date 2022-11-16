@@ -70,7 +70,7 @@ def camara():
 #         # Cargar los pesos pre-entrenados del modelo
 #         modelo_seg.load_weights()
        
-        mask_est = modelo.predict(img_process)
+        mask_est = modelo.predict(final_image)
         st.subheader("Segmentación.")
         st.image(mask_est)
 
