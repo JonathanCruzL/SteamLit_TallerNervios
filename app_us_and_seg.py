@@ -64,7 +64,7 @@ def camara():
         # Multiplicar el rectángulo con la imagen original
         ee = np.multiply(mask_rectangle, img_array) / 255.0
         # Mostrar la imagen
-        st.image(ee)
+#         st.image(ee)
         
         st.subheader("Imagen a descargar o compartir")
         # Mostrar el resultado Final
@@ -86,10 +86,8 @@ def camara():
         mask_est[mask_est<0.5] = 0
         mask_est = mask_est.astype(np.uint8)
         mask_est = mask_est*255
-        
-        st.write(str(np.shape(mask_est)))
+
         mask_est_Show = cv.resize(np.squeeze(mask_est), (584,584) )
-        st.write(str(np.shape(mask_est_Show)))
 
         st.subheader("Segmentación.")
         st.image(mask_est_Show)
