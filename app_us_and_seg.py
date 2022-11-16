@@ -95,12 +95,12 @@ def camara():
         mask_est = mask_est.astype(np.uint8)
         mask_est = mask_est*255
 
-#         mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
+        mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
         
         st.subheader("Segmentación de la estructura nerviosa")
         
         col1_, col2_, col3_ = st.columns([2, 5, 2])
-        col2_.image(mask_est) # use_column_width=True)
+        col2_.image(mask_est_Show) # use_column_width=True)
         
 #         plt.figure(figsize = (10,10))
 #         plt.imshow(img, cmap = "gray")
