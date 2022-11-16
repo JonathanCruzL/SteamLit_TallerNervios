@@ -9,7 +9,7 @@ from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
 from model_seg_unet import (upsample_simple, upsample_conv, create_model)
-from img_contour import img_contour
+# from img_contour import img_contour
 
 def saludo():
   
