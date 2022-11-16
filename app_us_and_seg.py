@@ -4,6 +4,8 @@ from PIL import Image,ImageOps
 import numpy as np
 import cv2 as cv
 import matplotlib.pyplot as plt
+from skimage import segmentation
+
 import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
@@ -102,12 +104,13 @@ def camara():
         col1_, col2_, col3_ = st.columns([2, 5, 2])
         col2_.image(mask_est_Show) # use_column_width=True)
         
-#         plt.figure(figsize = (10,10))
-#         plt.imshow(img, cmap = "gray")
-#         edges_est = segmentation.clear_border(np.squeeze(mask_est))
-#         plt.contour(edges_est,[0.5],colors=['red'])
-#         plt.axis('off')
-#         plt.show()
+        
+        plt.figure(figsize = (10,10))
+        plt.imshow(img, cmap = "gray")
+        edges_est = segmentation.clear_border(np.squeeze(mask_est))
+        plt.contour(edges_est,[0.5],colors=['red'])
+        plt.axis('off')
+        plt.show()
         
 #         st.image(mask_est_Show)
 
