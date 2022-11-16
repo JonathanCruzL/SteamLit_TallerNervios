@@ -94,7 +94,7 @@ def camara():
 
         mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
         
-        st.subheader("Segmentación.")
+        st.subheader("Segmentación")
         
         col1_, col2_, col3_ = st.columns([2, 5, 2])
         col2_.image(mask_est_Show) # use_column_width=True)
