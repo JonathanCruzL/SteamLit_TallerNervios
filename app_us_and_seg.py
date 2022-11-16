@@ -14,7 +14,9 @@ from model_seg_unet import (upsample_simple, upsample_conv, create_model)
 def saludo():
   
     # Título de la App
-    st.header("SegmentApp")
+#     st.header("SegmentApp")
+    col_1, col_2, col_3 = st.columns([2, 5, 2])
+    col_2.header("SegmentApp") # use_column_width=True)
     # Descripción del aplicativo
     texto = """ Esta aplicación permite extraer el recuadro de ultrasonido de una imagen
     tomada directamente del ecógrafo. Posteriormente, realiza la segmentación automática 
