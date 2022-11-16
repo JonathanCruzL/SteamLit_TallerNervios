@@ -73,13 +73,8 @@ def camara():
         # Cargar los pesos pre-entrenados del modelo
         modelo_seg.load_weights('models/model_seg_w/model_Unet_wei.h5fd')
         
-        img2pred = cv.resize(np.array(final_image), (256,256))
+        img2pred = (cv.resize(np.array(final_image), (256,256)))/255
         img2pred = img2pred[np.newaxis,...,np.newaxis]
-        img2pred = img2pred/255
-        
-        img2pred[img2pred>=0.5] = 1
-        img2pred[img2pred<0.5] = 0
-        img2pred = img2pred.astype(np.uint8)
         
         st.write("img2predi "+str(type(img2pred)))
         st.write("img2predi "+str(np.shape(img2pred)))
@@ -89,6 +84,20 @@ def camara():
         st.write("img2predi min "+str(np.min(img2pred)))
         
         mask_est = modelo_seg.predict(img2pred)
+        
+        st.write("mask_est "+str(type(mask_est)))
+        st.write("mask_est "+str(np.shape(mask_est)))
+        
+        st.write("mask_est Unique "+str(np.unique(mask_est)))
+        st.write("mask_est max "+str(np.max(mask_est)))
+        st.write("mask_est min "+str(np.min(mask_est)))        
+
+        
+#         img2pred[img2pred>=0.5] = 1
+#         img2pred[img2pred<0.5] = 0
+#         img2pred = img2pred.astype(np.uint8)
+        
+        
         st.subheader("Segmentación.")
         st.image(mask_est)
 
