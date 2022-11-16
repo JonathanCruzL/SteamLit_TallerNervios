@@ -16,7 +16,7 @@ def saludo():
     # Título de la App
 #     st.header("NerveID")
     col_1, col_2, col_3 = st.columns([5, 5, 5])
-    col_2.header("SegmentApp") # use_column_width=True)
+    col_2.header("Desarrollo de una herramienta de seguimiento de aguja y segmentación de estructuras nerviosas en imágenes de ultrasonido") # use_column_width=True)
     # Descripción del aplicativo
     texto = """ Esta aplicación permite extraer el recuadro de ultrasonido de una imagen
     tomada directamente del ecógrafo. Posteriormente, realiza la segmentación automática 
@@ -108,6 +108,8 @@ def camara():
         
         col1_, col2_, col3_ = st.columns([2, 5, 2])
         col2_.image(cont) # use_column_width=True)
+        
+  
         
 
 
