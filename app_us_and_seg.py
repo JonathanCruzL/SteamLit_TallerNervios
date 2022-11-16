@@ -102,6 +102,8 @@ def camara():
         col2_.image(mask_est_Show) # use_column_width=True)
         
         contours, hierarchy = cv.findContours(image=mask_est_Show, mode=cv.RETR_TREE, method=cv.CHAIN_APPROX_NONE)
+        
+        st.write(str(np.shape(final_US_Show)))
         cont = cv.drawContours(image=final_US_Show, contours=contours, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv.LINE_AA)
         
         cont = cont[...,np.newaxis]
