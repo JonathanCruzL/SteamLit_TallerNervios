@@ -68,7 +68,7 @@ def camara():
         
         st.subheader("Imagen a descargar o compartir")
         # Mostrar el resultado Final
-        final_US_Show = cv.resize(final_image, (584,584))
+        final_US_Show = cv.resize(final_image, (400,400))
         st.image(final_US_Show)
         
         # =======================================================================
@@ -87,7 +87,7 @@ def camara():
         mask_est = mask_est.astype(np.uint8)
         mask_est = mask_est*255
 
-        mask_est_Show = cv.resize(np.squeeze(mask_est), (584,584) )
+        mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
 
         st.subheader("Segmentación.")
         st.image(mask_est_Show)
