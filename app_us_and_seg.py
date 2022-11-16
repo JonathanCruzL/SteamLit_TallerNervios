@@ -104,7 +104,7 @@ def camara():
         img_RGB = cv.cvtColor(img_RGB,cv.COLOR_GRAY2RGB)
         
         contours, hierarchy = cv.findContours(image=mask_est_Show, mode=cv.RETR_TREE, method=cv.CHAIN_APPROX_NONE)    
-        cont = cv.drawContours(image=img_RGB, contours=contours, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv.LINE_AA)
+        cont = cv.drawContours(image=img_RGB, contours=contours, contourIdx=-1, color=(255, 0, 0), thickness=2, lineType=cv.LINE_AA)
         
         col1_, col2_, col3_ = st.columns([2, 5, 2])
         col2_.image(cont) # use_column_width=True)
