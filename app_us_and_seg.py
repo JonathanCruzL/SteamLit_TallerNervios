@@ -79,33 +79,14 @@ def camara():
         img2pred = (cv.resize(np.array(final_image), (256,256)))/255
         img2pred = img2pred[np.newaxis,...,np.newaxis]
         
-        st.write("img2predi "+str(type(img2pred)))
-        st.write("img2predi "+str(np.shape(img2pred)))
-        
-        st.write("img2predi Unique "+str(np.unique(img2pred)))
-        st.write("img2predi max "+str(np.max(img2pred)))
-        st.write("img2predi min "+str(np.min(img2pred)))
-        
         mask_est = modelo_seg.predict(img2pred)
-        
         mask_est[mask_est>=0.5] = 1
         mask_est[mask_est<0.5] = 0
         mask_est = mask_est.astype(np.uint8)
+        mask_est = mask_est*255
 
-
-        st.write("mask_est "+str(type(mask_est)))
-        st.write("mask_est "+str(np.shape(mask_est)))
-        
-        st.write("mask_est Unique "+str(np.unique(mask_est)))
-        st.write("mask_est max "+str(np.max(mask_est)))
-        st.write("mask_est min "+str(np.min(mask_est)))        
-
-        
-
-        
-        
         st.subheader("Segmentación.")
-        st.image(mask_est*255)
+        st.image(mask_est)
 
         
     
