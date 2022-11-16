@@ -4,8 +4,6 @@ from PIL import Image,ImageOps
 import numpy as np
 import cv2 as cv
 
-from skimage import segmentation
-
 import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
