@@ -107,7 +107,7 @@ def camara():
         
         
         st.subheader("Segmentación.")
-        st.image(mask_est)
+        st.image(mask_est*255)
 
         
     
