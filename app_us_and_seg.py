@@ -68,8 +68,9 @@ def camara():
         st.subheader("Imagen a descargar o compartir")
         # Mostrar el resultado Final
         
-        final_image = cv.resize(final_image, (256,256))
-        
+#         final_image = cv.resize(final_image, (256,256))
+
+        st.write(str(np.shape(final_image)))
         st.image(final_image)
         
         # =======================================================================
