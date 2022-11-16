@@ -7,6 +7,7 @@ import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
+from model_seg_unet import (upsample_simple, upsample_conv, create_model)
 
 
 def saludo():
@@ -69,6 +70,9 @@ def camara():
 #         modelo_seg = 
 #         # Cargar los pesos pre-entrenados del modelo
 #         modelo_seg.load_weights()
+        
+        print(type(final_image))
+        print(np.shape(final_image))
        
         mask_est = modelo.predict(img_process)
         st.subheader("Segmentación.")
