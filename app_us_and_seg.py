@@ -9,6 +9,8 @@ from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
 from model_seg_unet import (upsample_simple, upsample_conv, create_model)
 
+with open("style.css") as f:
+    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 def saludo():
     # Título de la App
