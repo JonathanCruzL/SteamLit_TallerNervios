@@ -67,14 +67,14 @@ def camara():
         st.image(final_image)
         
         # Se usa otro modelo para segmentar nervios
-#         modelo_seg = 
-#         # Cargar los pesos pre-entrenados del modelo
-#         modelo_seg.load_weights()
+        modelo_seg = create_model()
+        # Cargar los pesos pre-entrenados del modelo
+        modelo_seg.load_weights('models/model_seg_w/model_Unet_wei.h5fd)
         
         print(type(final_image))
         print(np.shape(final_image))
        
-        mask_est = modelo.predict(img_process)
+        mask_est = modelo_seg.predict(final_image)
         st.subheader("Segmentación.")
         st.image(mask_est)
 
