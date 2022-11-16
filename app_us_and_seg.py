@@ -90,9 +90,9 @@ def camara():
         
         mask_est = modelo_seg.predict(img2pred)
         
-        img2pred[img2pred>=0.5] = 1
-        img2pred[img2pred<0.5] = 0
-        img2pred = img2pred.astype(np.uint8)
+        mask_est[mask_est>=0.5] = 1
+        mask_est[mask_est<0.5] = 0
+        mask_est = mask_est.astype(np.uint8)
 
 
         st.write("mask_est "+str(type(mask_est)))
