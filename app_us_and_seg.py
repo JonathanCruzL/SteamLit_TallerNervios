@@ -9,10 +9,11 @@ from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
                      dimRec)
 from model_seg_unet import (upsample_simple, upsample_conv, create_model)
 
-with open("style.css") as f:
-    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+
 
 def saludo():
+    with open("style.css") as f:
+      st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
     # Título de la App
     st.header("Anest App")
     # Descripción del aplicativo
@@ -23,6 +24,8 @@ def saludo():
 
 
 def camara():
+    with open("style.css") as f:
+      st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
     # Cargar imagen o tomar foto
     uploaded_file = st.file_uploader("Cargar o Tomar la Foto")
 
@@ -87,6 +90,11 @@ def camara():
         
         mask_est = modelo_seg.predict(img2pred)
         
+        img2pred[img2pred>=0.5] = 1
+        img2pred[img2pred<0.5] = 0
+        img2pred = img2pred.astype(np.uint8)
+
+
         st.write("mask_est "+str(type(mask_est)))
         st.write("mask_est "+str(np.shape(mask_est)))
         
@@ -95,9 +103,7 @@ def camara():
         st.write("mask_est min "+str(np.min(mask_est)))        
 
         
-#         img2pred[img2pred>=0.5] = 1
-#         img2pred[img2pred<0.5] = 0
-#         img2pred = img2pred.astype(np.uint8)
+
         
         
         st.subheader("Segmentación.")
