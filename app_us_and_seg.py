@@ -101,15 +101,18 @@ def camara():
         col1_, col2_, col3_ = st.columns([2, 5, 2])
         col2_.image(mask_est_Show) # use_column_width=True)
         
-        contours, hierarchy = cv.findContours(image=mask_est_Show, mode=cv.RETR_TREE, method=cv.CHAIN_APPROX_NONE)
         
-        st.write(str(np.shape(final_US_Show)))
-        cont = cv.drawContours(image=final_US_Show, contours=contours, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv.LINE_AA)
+        img_RGB = final_US_Show[...,np.newaxis]
+        img_RGB = cv.cvtColor(img_RGB,cv.COLOR_GRAY2RGB)
         
-        cont = cont[...,np.newaxis]
-        cont = cv.cvtColor(cont,cv.COLOR_GRAY2RGB)
+        contours, hierarchy = cv.findContours(image=mask_est_Show, mode=cv.RETR_TREE, method=cv.CHAIN_APPROX_NONE)    
+        cont = cv.drawContours(image=img_RGB, contours=contours, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv.LINE_AA)
         
-        st.write(str(np.shape(cont)))
+#         cont = cont[...,np.newaxis]
+#         cont = cv.cvtColor(cont,cv.COLOR_GRAY2RGB)
+
+        st.write('img_RGB '+str(np.shape(img_RGB)))
+        st.write('cont '+str(np.shape(cont)))
         
         col1__, col2__, col3__ = st.columns([2, 5, 2])
         col2__.image(cont) # use_column_width=True)
