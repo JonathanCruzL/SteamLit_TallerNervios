@@ -3,6 +3,7 @@ import streamlit as st
 from PIL import Image,ImageOps
 import numpy as np
 import cv2 as cv
+import matplotlib.pyplot as plt
 import pandas as pd
 from unet import unet
 from proceso import (imagenProceso, removerAreas, aumentoTam, cuadrarRect,
@@ -94,13 +95,19 @@ def camara():
         mask_est = mask_est.astype(np.uint8)
         mask_est = mask_est*255
 
-        mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
+#         mask_est_Show = cv.resize(np.squeeze(mask_est), (400,400) )
         
         st.subheader("Segmentación de la estructura nerviosa")
         
         col1_, col2_, col3_ = st.columns([2, 5, 2])
-        col2_.image(mask_est_Show) # use_column_width=True)
-
+        col2_.image(mask_est) # use_column_width=True)
+        
+#         plt.figure(figsize = (10,10))
+#         plt.imshow(img, cmap = "gray")
+#         edges_est = segmentation.clear_border(np.squeeze(mask_est))
+#         plt.contour(edges_est,[0.5],colors=['red'])
+#         plt.axis('off')
+#         plt.show()
         
 #         st.image(mask_est_Show)
 
