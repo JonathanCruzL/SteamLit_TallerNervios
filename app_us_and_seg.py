@@ -12,8 +12,7 @@ from model_seg_unet import (upsample_simple, upsample_conv, create_model)
 
 
 def saludo():
-    with open("style.css") as f:
-      st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+  
     # Título de la App
     st.header("Anest App")
     # Descripción del aplicativo
@@ -24,8 +23,7 @@ def saludo():
 
 
 def camara():
-    with open("style.css") as f:
-      st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+    
     # Cargar imagen o tomar foto
     uploaded_file = st.file_uploader("Cargar o Tomar la Foto")
 
