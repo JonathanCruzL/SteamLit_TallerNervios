@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image,ImageOps
 import numpy as np
 import cv2 as cv
-import matplotlib.pyplot as plt
+import matplotlib
 from skimage import segmentation
 
 import pandas as pd
