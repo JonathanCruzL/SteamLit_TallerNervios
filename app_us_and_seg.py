@@ -75,8 +75,11 @@ def camara():
 
         st.write(str(type(final_image)))
         st.write(str(np.shape(final_image)))
-        img2pred = final_image
-        img2pred = cv.resize(final_image, (256,256))
+        
+        img2pred = cv.resize(np.array(final_image), (256,256))
+        
+        st.write("img2predi "+str(type(img2pred)))
+        st.write("img2predi "+str(np.shape(img2pred)))
         
         mask_est = modelo_seg.predict(img2pred)
         st.subheader("Segmentación.")
