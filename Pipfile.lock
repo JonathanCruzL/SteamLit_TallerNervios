@@ -399,7 +399,7 @@
             "markers": "python_version >= '3.6'",
             "version": "==21.3"
         },
-        "streamlit_webrtc": {
+        "streamlit-webrtc": {
             "hashes": [
                 "sha256:01469e8b8feef31b5be69a97f45ad68048130767d01ca552660d886de2045bcf",
                 "sha256:169783b6a346b7447779956c7ba3cb4360c7e989ef5323ac91d27019c76bd747"
